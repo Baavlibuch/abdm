@@ -59,7 +59,7 @@ const AadhaarForm = ({ nextForm, setAadhaarMessage }) => {
                 }
             });
 
-            console.log("Aadhaar form API data", response.data);
+            // console.log("Aadhaar form API data", response.data);
             setApiData(response.data);
             setAadhaarMessage(response.data);
             nextForm()

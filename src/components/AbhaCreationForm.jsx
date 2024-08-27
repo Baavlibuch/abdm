@@ -62,7 +62,7 @@ const AbhaCreationForm = () => {
         }
     }
 
-    console.log("username: ", selectedUsername)
+    // console.log("username: ", selectedUsername)
 
     return (
         <div className='flex justify-center items-center'>

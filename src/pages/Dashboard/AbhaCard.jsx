@@ -8,16 +8,26 @@ const AbhaCard = () => {
     const DownloadAbhaCard = async () => {
         try {
             const apiUrl = import.meta.env.VITE_ABHACARD_API;
-            await axios.get(apiUrl, {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-        } catch (error) {
-            console.log(error)
-        }
-    }
+            const response = await axios.get(apiUrl, {
+                responseType: 'blob'
+            });
 
+            const blob = new Blob([response.data], { type: 'image/png' });
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'AbhaCard.png');
+            document.body.appendChild(link);
+            link.click();
+            link.parentNode.removeChild(link);
+            window.URL.revokeObjectURL(url);
+    
+        } catch (error) {
+            console.log('Error downloading the file:', error);
+        }
+    };
+
+    
     useEffect(() => {
         const AbhaProfileApi = async () => {
             setLoading(true);
@@ -41,7 +51,7 @@ const AbhaCard = () => {
         AbhaProfileApi()
     }, [])
 
-    console.log('ABHA CArd: ', profileData);
+    // console.log('ABHA CArd: ', profileData);
 
     return (
         <>

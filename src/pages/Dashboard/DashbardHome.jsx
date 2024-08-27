@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 // import { useNavigate } from 'react-router-dom';
 import AbhaCard from './AbhaCard';
+import MobileUpdate from './MobileUpdate';
+import VerifyEmail from "./VerifyEmail"
 
 const DashbardHome = () => {
 
@@ -20,11 +22,11 @@ const DashbardHome = () => {
         },
         {
             optionName: 'Verify Phone Number',
-            component: ''
+            component: MobileUpdate
         },
         {
             optionName: 'Verify E-Mail',
-            component: ''
+            component: VerifyEmail
         },
     ];
 
@@ -35,7 +37,7 @@ const DashbardHome = () => {
 
             {/* left side menu */}
             {isExpanded ?
-                <div className='md:w-[25rem] w-full absolute h-screen md:relative z-50 px-4 pt-8 transition-all duration-300 ease-in-out'>
+                <div className='md:w-[25rem] w-full absolute h-screen md:relative z-50 px-4 pt-8 transition-all duration-300 ease-in-out bg-white'>
 
                     <div className='flex flex-col gap-8 h-full'>
                         <div className='flex justify-between items-center gap-3'>
@@ -69,7 +71,10 @@ const DashbardHome = () => {
 
             {/* right side */}
             <div className='py-8 px-12 w-full h-screen overflow-y-auto mx-auto'>
+                <div className='max-w-[1250px] mx-auto'>
                 {SelectedComponent && <SelectedComponent />}
+                </div>
+                
             </div>
         </div>
     )

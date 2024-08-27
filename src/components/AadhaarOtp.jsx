@@ -65,7 +65,7 @@ const AadhaarOtp = ({ aadhaarMessage, nextForm }) => {
                 }
             });
 
-            console.log("Aadhaar enrol data", response.data);
+            // console.log("Aadhaar enrol data", response.data);
             if (response.data.isNew === true) {
                 nextForm()
             } else {
