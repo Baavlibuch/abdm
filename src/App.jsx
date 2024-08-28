@@ -7,16 +7,15 @@ import DashbardHome from "./pages/Dashboard/DashbardHome";
 function App() {
 
   return (
-    <ApiContextProvider>
-      <Router>
+    <Router>
+      <ApiContextProvider>
         <Routes>
-          <Route path='*' element={'404 Not Found'} />
-
+          <Route path="*" element={'404 Not Found'} />
           <Route exact path="/" element={<Home />} />
           <Route path="/dashboard" element={<DashbardHome />} />
         </Routes>
-      </Router>
-    </ApiContextProvider>
+      </ApiContextProvider>
+    </Router>
   )
 }
 
