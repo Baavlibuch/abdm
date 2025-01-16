@@ -7,10 +7,7 @@ async function recordOnShare(req, res) {
         try{
                 const M2_AccessToken = readfile('M2_AccessToken');
                 const baseUrl = readfile('M2_Sandbox_BaseURL');
-<<<<<<< HEAD
                 const requestId = readfile('requestId');
-=======
->>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
                 const randomUUID = uuidv4();
 
                 const currentTime = new Date();
@@ -18,11 +15,7 @@ async function recordOnShare(req, res) {
 
                 const apiUrl = baseUrl + '/api/hiecm/patient-share/v3/on-share';
 
-<<<<<<< HEAD
                 const { abhaNumber, paymentReference } = req.body;
-=======
-                //const { consentId, Status, requestId } = req.body;
->>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
 
                 const headers = {
                         'REQUEST-ID': randomUUID,
@@ -33,7 +26,6 @@ async function recordOnShare(req, res) {
 
                 const requestBody = {
                 	'acknowledgement': {
-<<<<<<< HEAD
 				'status': 'SUCCESS',
 				'abhaNumber': abhaNumber,
 				'healthInformation': {
@@ -42,16 +34,6 @@ async function recordOnShare(req, res) {
 			},
 			'response': {
 				'requestId': requestId
-=======
-				'status': '',
-				'abhaNumber': '',
-				'healthInformation': {
-					'healthInformationReference': ''
-				}
-			},
-			'response': {
-				'requestId': ''
->>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
 			}
 		};
 

@@ -1,21 +1,14 @@
 const axios = require('axios');
-<<<<<<< HEAD
 const { readfile, Write2file } = require('../../../read_or_write2KeyValues');
-=======
-const { readfile, Write2file } = require('../../../read_or_write2KeyValues.js');
->>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
 const { v4: uuidv4 } = require('uuid');
 
 async function HMISresponseOnRecordLink (req, res) {
 	try{
                 const M2_AccessToken = readfile('M2_AccessToken');
                 const baseUrl = readfile('M2_Sandbox_BaseURL');
-<<<<<<< HEAD
                 const transactionId = readfile('transactionId');
                 const requestId = readfile('requestId');
                 const referenceNumber = readfile('referenceNumber');
-=======
->>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
                 const randomUUID = uuidv4();
 
                 const currentTime = new Date();
@@ -33,15 +26,9 @@ async function HMISresponseOnRecordLink (req, res) {
                       };
 
                 const requestBody = {
-<<<<<<< HEAD
                         'transactionId': transactionId,
                         'link' : {
 				'referenceNumber': referenceNumber,
-=======
-                        'transactionId': '',
-                        'link' : {
-				'referenceNumber': '',
->>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
 				'authenticationType': 'MEDIATE',
 				'meta': {
 					'communicationMedium': 'MOBILE',
@@ -50,11 +37,7 @@ async function HMISresponseOnRecordLink (req, res) {
 				}
 			},
 			'response': {
-<<<<<<< HEAD
 				'requestId': requestId
-=======
-				'requestId': randomUUID
->>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
 			}
                        };
 

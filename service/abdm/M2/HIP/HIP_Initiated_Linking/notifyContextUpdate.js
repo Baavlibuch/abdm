@@ -6,11 +6,7 @@ const { v4: uuidv4 } = require('uuid');
 async function notifyContextUpdate(req, res) {
 	 try{
                 const M2_AccessToken = readfile('M2_AccessToken');
-<<<<<<< HEAD
                 const linkToken = readfile('linkToken');
-=======
-                const linkToken = readfile('X-Link-Token');
->>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
                 const baseUrl = readfile('M2_Sandbox_BaseURL');
                 const randomUUID = uuidv4();
 
@@ -19,23 +15,14 @@ async function notifyContextUpdate(req, res) {
 
                 const apiUrl = baseUrl + '/api/hiecm/hip/v3/link/context/notify';
 
-<<<<<<< HEAD
                 const { abhaAddress, hiType, patientReference, careContextReference, hipId } = req.body;
-=======
-                const { abhaAddress, hiType, patientReference, careContextReference } = req.body;
->>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
 
                 const headers = {
                         'REQUEST-ID': randomUUID,
                         'TIMESTAMP': formattedTimestamp,
                         'Authorization': `Bearer ${M2_AccessToken}`,
-<<<<<<< HEAD
                         'X-HIP-ID': hipId,
                         //'X-HIP-ID': '01082002',
-=======
-                        'X-HIP-ID': '01082002',
-                        //'X-HIP-ID': 'IN2810014366',
->>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
                         'X-CM-ID': 'sbx',
                     };
 
@@ -53,11 +40,7 @@ async function notifyContextUpdate(req, res) {
 				],
 				'date': formattedTimestamp,
 				'hip': {
-<<<<<<< HEAD
 					'id': hipId
-=======
-					'id': '01082002'
->>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
 				}
 			}      
 		};

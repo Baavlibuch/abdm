@@ -21,15 +21,9 @@ async function authTokenApi(req, res){
 		};
 
 		const requestBody = {
-<<<<<<< HEAD
 			'clientId': process.env.ABDM_SBX_CLIENT_ID || 'SBX_002928',
 			//'clientSecret': '0b19fba7-1232-4a1f-a3dc-981167db1749',
 			'clientSecret': process.env.ABDM_SBX_CLIENT_SECRET || clientSecret,
-=======
-			'clientId': 'SBX_002928',
-			//'clientSecret': '0b19fba7-1232-4a1f-a3dc-981167db1749',
-			'clientSecret': clientSecret,
->>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
 			'grantType': 'client_credentials',
 		};
 

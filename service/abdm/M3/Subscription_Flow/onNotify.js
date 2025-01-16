@@ -7,22 +7,14 @@ async function onNotify(req, res) {
         try{
                 const M2_AccessToken = readfile('M2_AccessToken');
                 const baseUrl = readfile('M2_Sandbox_BaseURL');
-<<<<<<< HEAD
                 const subscriptionId = readfile('subscriptionId');
                 const requestId = readfile('requestId');
                 const subscriptionStatus = readfile('subscriptionStatus');
-=======
->>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
                 const randomUUID = uuidv4();
 
                 const currentTime = new Date();
                 const formattedTimestamp = currentTime.toISOString();
 
-<<<<<<< HEAD
-=======
-		const { subscriptionRequestId, requestId } = req.body;
-
->>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
                 const apiUrl = baseUrl + `/api/hiecm/subscription-requests/v3/hiu/on-notify`;
 
                 const headers = {
@@ -34,13 +26,8 @@ async function onNotify(req, res) {
 
                 const requestBody = {
                 	'acknowledgement': {
-<<<<<<< HEAD
 				'status': subscriptionStatus, //'OK'
 				'subscriptionRequestId': subscriptionId
-=======
-				'status': 'OK',
-				'subscriptionRequestId': subscriptionRequestId
->>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
 			},
 			'response': {
 				'requestId': requestId

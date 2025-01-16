@@ -7,22 +7,14 @@ async function HIUonNotify(req, res) {
         try{
                 const M2_AccessToken = readfile('M2_AccessToken');
                 const baseUrl = readfile('M2_Sandbox_BaseURL');
-<<<<<<< HEAD
                 const subscriptionStatus = readfile('subscriptionStatus');
                 const eventId = readfile('eventId');
                 const requestId = readfile('requestId');
-=======
->>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
                 const randomUUID = uuidv4();
 
                 const currentTime = new Date();
                 const formattedTimestamp = currentTime.toISOString();
 
-<<<<<<< HEAD
-=======
-                const { eventId, requestId } = req.body;
-
->>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
                 const apiUrl = baseUrl + `/api/hiecm/subscription-requests/v3/hiu/care-context/on-notify`;
 
 
@@ -35,11 +27,7 @@ async function HIUonNotify(req, res) {
 
                 const requestBody = {
                 	'acknowledgement': {
-<<<<<<< HEAD
 				'status': subscriptionStatus, // 'OK'
-=======
-				'status': 'OK',
->>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
 				'eventId': eventId,
 			},
 			'response': {

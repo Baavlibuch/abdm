@@ -28,11 +28,7 @@ async function requestInit(req, res) {
 				'purpose': {
 					'text': 'Care Management',
 					'code': 'CAREMGT',
-<<<<<<< HEAD
 					'refUri': refUri
-=======
-					'refUri': ''
->>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
 				},
 				'patient': {
 					'id': abhaAddress
