@@ -13,19 +13,32 @@ async function patientContextDiscover (req, res) {
 
                 const apiUrl = baseUrl + '/api/hiecm/user-initiated-linking/v3/patient/care-context/discover';
 
+<<<<<<< HEAD
                 const { abhaAddress, hipId } = req.body;
+=======
+                const { abhaAddress } = req.body;
+>>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
 
                 const headers = {
                         'REQUEST-ID': randomUUID,
                         'TIMESTAMP': formattedTimestamp,
                         'Authorization': `Bearer ${M2_AccessToken}`,
+<<<<<<< HEAD
                         'X-HIU-ID': hipId,
                         //'X-HIP-ID': 'IN162946244',
+=======
+                        'X-HIU-ID': 'IN162946244',
+                        //'X-HIP-ID': 'IN2810014366',
+>>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
                         'X-CM-ID': 'sbx',
                       };
 
                 const requestBody = {
+<<<<<<< HEAD
 			'hipId': hipId,
+=======
+			'hipId': 'IN3410000223',
+>>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
 			'unverifiedIdentifiers': [
 				{
 					'type': 'ABHA_ADDRESS',

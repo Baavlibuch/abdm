@@ -6,7 +6,10 @@ async function careContextConfirm (req, res) {
         try{
                 const M2_AccessToken = readfile('M2_AccessToken');
                 const baseUrl = readfile('M2_Sandbox_BaseURL');
+<<<<<<< HEAD
                 const referenceNumber = readfile('referenceNumber');
+=======
+>>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
                 const randomUUID = uuidv4();
 
                 const currentTime = new Date();
@@ -14,19 +17,31 @@ async function careContextConfirm (req, res) {
 
                 const apiUrl = baseUrl + '/api/hiecm/user-initiated-linking/v3/link/care-context/confirm';
 
+<<<<<<< HEAD
                 const { token, hipId } = req.body;
+=======
+                const { token } = req.body;
+>>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
 
                 const headers = {
                         'REQUEST-ID': randomUUID,
                         'TIMESTAMP': formattedTimestamp,
                         'Authorization': `Bearer ${M2_AccessToken}`,
                         'X-CM-ID': 'sbx',
+<<<<<<< HEAD
 			'X-HIU-ID': hipId
+=======
+			'X-HIU-ID': ''
+>>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
                       };
 
                 const requestBody = {
                 	'token': token,
+<<<<<<< HEAD
 			'linkRefNumber': referenceNumber
+=======
+			'linkRefNumber': ''
+>>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
 		};
 
                 const response = await axios.post( apiUrl, requestBody, { headers } );

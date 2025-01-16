@@ -14,7 +14,11 @@ async function consentRequestInit(req, res) {
 
                 const apiUrl = baseUrl + '/api/hiecm/consent/v3/request/init';
 
+<<<<<<< HEAD
                 const { abhaAddress, requesterName, requesterNumber, hiType, requesterSystem, dateTo, dateFrom, frequencyUnit, dataEraseAt, hipId, hiuId } = req.body;
+=======
+                const { abhaAddress, requesterName, requesterNumber, hiType, requesterSystem, dateTo, dateFrom, frequencyUnit, dataEraseAt } = req.body;
+>>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
 
                 const headers = {
                         'REQUEST-ID': randomUUID,
@@ -26,6 +30,7 @@ async function consentRequestInit(req, res) {
                 const requestBody = {
                 	'consent':{
 				'hip': {
+<<<<<<< HEAD
 					'id': hipId, //01082002
 				},
 				'hiu': {
@@ -33,6 +38,16 @@ async function consentRequestInit(req, res) {
 				},
 				'hiTypes': [
 					hiType
+=======
+					'id': '01082002',
+				},
+				'hiu': {
+					'id': 'IN162946244'
+				},
+				'hiTypes': [
+					'Prescription',
+					'DiagnosticReport',
+>>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
 				],
 				'patient': {
 					'id': abhaAddress
@@ -65,8 +80,13 @@ async function consentRequestInit(req, res) {
 				},
 				'careContexts': [
 					{
+<<<<<<< HEAD
 						'patientReference': abhaAddress,
 						'careContextReference': 'COCa496bc2f-ca6c-4af5-b973-02e915fd9815'
+=======
+						'patientReference': '',
+						'careContextReference': ''
+>>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
 					}
 				]
 			}     

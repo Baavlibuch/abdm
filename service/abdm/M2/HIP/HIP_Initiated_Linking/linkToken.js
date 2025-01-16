@@ -22,6 +22,7 @@ async function linkToken(req, res) {
 			'X-CM-ID': 'sbx'
 		};
 
+<<<<<<< HEAD
 		// const callbackUrl = 'http://34.131.119.20:3000/api/v3/hip/token/on-generate-token';
 
 		const requestBody = {
@@ -35,6 +36,21 @@ async function linkToken(req, res) {
 
 		const response = await axios.post( apiUrl, requestBody, { headers } );
 		// console.log('callback response in linkToken.js: ', response.data)
+=======
+		const callbackUrl = 'http://34.131.119.20:3000/api/v3/hip/token/on-generate-token';
+
+		const requestBody = {
+			'abhaNumber': '91334718534327',
+			'abhaAddress': 'gyanangshu@sbx',
+			'name': 'Gyanangshu Misra',
+			'gender': 'M',
+			'yearOfBirth': '2000',
+			'callbackUrl': callbackUrl
+		};
+
+		const response = await axios.post( apiUrl, requestBody, { headers } );
+		console.log('callback response in linkToken.js: ', response.data)
+>>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
 		res.status(200).json(response.data)
 
 	} catch (error) {

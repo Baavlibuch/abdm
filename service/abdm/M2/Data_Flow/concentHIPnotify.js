@@ -7,9 +7,12 @@ async function consentHIPnotify(req, res) {
         try{
                 const M2_AccessToken = readfile('M2_AccessToken');
                 const baseUrl = readfile('M2_Sandbox_BaseURL');
+<<<<<<< HEAD
                 const requestStatus = readfile('requestStatus');
                 const consentId = readfile('consentId');
                 const requestId = readfile('requestId');
+=======
+>>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
                 const randomUUID = uuidv4();
 
                 const currentTime = new Date();
@@ -17,6 +20,11 @@ async function consentHIPnotify(req, res) {
 
                 const apiUrl = baseUrl + '/api/hiecm/consent/v3/request/hip/on-notify';
 
+<<<<<<< HEAD
+=======
+                const { consentId, Status, requestId } = req.body;
+
+>>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
                 const headers = {
                         'REQUEST-ID': randomUUID,
                         'TIMESTAMP': formattedTimestamp,
@@ -26,11 +34,19 @@ async function consentHIPnotify(req, res) {
 
                 const requestBody = {
                 	'acknowledgement': {
+<<<<<<< HEAD
 				'status' : requestStatus,
 				'consentId': consentId,
 			},
 			'response' : {
 				'requestId': requestId
+=======
+				'status' : 'OK',
+				'consentId': '',
+			},
+			'response' : {
+				'requestId': ''
+>>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
 			}
                 };
 
@@ -38,7 +54,11 @@ async function consentHIPnotify(req, res) {
                 res.status(200).json(response.json)
 
         } catch (error) {
+<<<<<<< HEAD
                 console.error('error in consentHIPnotify.js: ', error.response ? error.response.data : error.message)
+=======
+                console.error('error in censentHIPnotify.js: ', error.response ? error.response.data : error.message)
+>>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
                 res.status(500).json({error: error.message});
         }
 

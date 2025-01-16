@@ -7,7 +7,10 @@ async function consentFetch(req, res) {
         try{
                 const M2_AccessToken = readfile('M2_AccessToken');
                 const baseUrl = readfile('M2_Sandbox_BaseURL');
+<<<<<<< HEAD
                 const consentRequestId = readfile('consentRequestId');
+=======
+>>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
                 const randomUUID = uuidv4();
 
                 const currentTime = new Date();
@@ -15,7 +18,11 @@ async function consentFetch(req, res) {
 
                 const apiUrl = baseUrl + '/api/hiecm/consent/v3/fetch';
 
+<<<<<<< HEAD
                 const { hiuId } = req.body;
+=======
+                const { hiuId, consentId  } = req.body;
+>>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
 
                 const headers = {
                         'REQUEST-ID': randomUUID,
@@ -26,7 +33,11 @@ async function consentFetch(req, res) {
                       };
 
                 const requestBody = {
+<<<<<<< HEAD
                         'consentId': consentRequestId
+=======
+                        'consentId': consentId
+>>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
                 };
 
                 const response = await axios.post( apiUrl, requestBody, { headers } );

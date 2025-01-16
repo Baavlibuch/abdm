@@ -14,7 +14,11 @@ try{
 
                 const apiUrl = baseUrl + '/api/hiecm/hip/v3/link/patient/links/sms/notify2';
 
+<<<<<<< HEAD
 		const { phoneNumber, hipId, hipName } = req.body;
+=======
+		const { phoneNumber } = req.body;
+>>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
 
                 const headers = {
                         'REQUEST-ID': randomUUID,
@@ -29,10 +33,15 @@ try{
 			'notification':{
 				'phoneNo':phoneNumber,
 				'hip': {
+<<<<<<< HEAD
 					'id': hipId,
 					// 'id': '01082002',
 					'name': hipName
 					// 'name': 'IDFC Facility'
+=======
+					'id': '01082002',
+					'name': 'IDFC Facility'
+>>>>>>> 7a3281e15ebf94b30597098a3b64945312c860d6
 				}
 			}
 		};
