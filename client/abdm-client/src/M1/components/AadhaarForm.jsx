@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import forge from 'node-forge';
 import axios from 'axios';
+import axiosInstance from '../axiosInterceptor';
 // import { ApiAccess } from '../context/ApiContext';
 import { validate } from '../utils/Verhoeff';
 import {encryptText} from "../utils/V3ApiEncryption";
@@ -53,7 +54,7 @@ const AadhaarForm = ({ nextForm, setAadhaarMessage }) => {
 
             const apiUrl = import.meta.env.VITE_AADHAAR_API;
 
-            const response = await axios.post(apiUrl, requestBody, {
+            const response = await axiosInstance.post(apiUrl, requestBody, {
                 headers: {
                     'Content-Type': 'application/json'
                 }

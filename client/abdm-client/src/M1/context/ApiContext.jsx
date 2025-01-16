@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import axios from 'axios'
+import axiosInstance from "../axiosInterceptor";
 import { useNavigate } from "react-router-dom";
 
 const ApiContext = createContext()
@@ -13,7 +14,7 @@ export const ApiContextProvider = ({ children }) => {
     const fetchAccessToken = async () => {
         try {
             const apiUrl = import.meta.env.VITE_ACCESSTOKEN_API;
-            const response = await axios.get(apiUrl);
+            const response = await axiosInstance.get(apiUrl);
             const token = response.data.accessToken;
             const expiryTime = new Date().getTime() + 20 * 60 * 1000; // 20 minutes from now
 

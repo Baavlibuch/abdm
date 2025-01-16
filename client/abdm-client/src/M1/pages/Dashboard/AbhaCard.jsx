@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import axiosInstance from '../../axiosInterceptor';
 
 const AbhaCard = () => {
     const [loading, setLoading] = useState(false);
@@ -8,7 +9,7 @@ const AbhaCard = () => {
     const DownloadAbhaCard = async () => {
         try {
             const apiUrl = import.meta.env.VITE_ABHACARD_API;
-            const response = await axios.get(apiUrl, {
+            const response = await axiosInstance.get(apiUrl, {
                 responseType: 'blob'
             });
 
@@ -34,7 +35,7 @@ const AbhaCard = () => {
             try {
                 const apiUrl = import.meta.env.VITE_PROFILE_API;
 
-                const response = await axios.get(apiUrl, {
+                const response = await axiosInstance.get(apiUrl, {
                     headers: {
                         'Content-Type': 'application/json'
                     }

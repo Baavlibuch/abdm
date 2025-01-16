@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
+import axiosInstance from '../axiosInterceptor';
 import { useNavigate } from 'react-router-dom';
 
 const AbhaCreationForm = () => {
@@ -19,7 +20,7 @@ const AbhaCreationForm = () => {
             try {
                 const apiUrl = import.meta.env.VITE_ENROLSUGGEST_API;
 
-                const response = await axios.get(apiUrl, {
+                const response = await axiosInstance.get(apiUrl, {
                     headers: {
                         'Content-Type': 'application/json'
                     }
@@ -49,7 +50,7 @@ const AbhaCreationForm = () => {
 
             const apiUrl = import.meta.env.VITE_CREATEADDRESS_API;
 
-            await axios.post(apiUrl, requestBody, {
+            await axiosInstance.post(apiUrl, requestBody, {
                 headers: {
                     'Content-Type': 'application/json'
                 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
+import axiosInstance from '../../axiosInterceptor';
 import { encryptText } from '../../utils/V3ApiEncryption';
 
 const VerifyEmail = () => {
@@ -16,7 +17,7 @@ const VerifyEmail = () => {
 
       const apiUrl = import.meta.env.VITE_VERIFYEMAIL_API;
 
-      const response = await axios.post(apiUrl, requestBody, {
+      const response = await axiosInstance.post(apiUrl, requestBody, {
         headers: {
           'Content-Type': 'application/json'
         }

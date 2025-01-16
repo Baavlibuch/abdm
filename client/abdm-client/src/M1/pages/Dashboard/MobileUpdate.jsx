@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input';
 import axios from 'axios';
+import axiosInstance from '../../axiosInterceptor';
 import { encryptText } from '../../utils/V3ApiEncryption';
 
 const MobileUpdate = () => {
@@ -61,7 +62,7 @@ const MobileUpdate = () => {
 
       const apiUrl = import.meta.env.VITE_UPDATEMOBILE_API;
 
-      const response = await axios.post(apiUrl, requestBody, {
+      const response = await axiosInstance.post(apiUrl, requestBody, {
         headers: {
           'Content-Type': 'application/json'
         }
@@ -92,7 +93,7 @@ const MobileUpdate = () => {
 
       const apiUrl = import.meta.env.VITE_VERIFYMOBILE_API;
 
-      const response = await axios.post(apiUrl, requestBody, {
+      const response = await axiosInstance.post(apiUrl, requestBody, {
         headers: {
           'Content-Type': 'application/json'
         }

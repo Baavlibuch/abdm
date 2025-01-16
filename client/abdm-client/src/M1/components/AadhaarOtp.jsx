@@ -3,6 +3,7 @@ import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input';
 import { encryptText } from "../utils/V3ApiEncryption";
 import axios from 'axios';
+import axiosInstance from '../axiosInterceptor';
 import { useNavigate } from 'react-router-dom';
 
 const AadhaarOtp = ({ aadhaarMessage, nextForm }) => {
@@ -59,7 +60,7 @@ const AadhaarOtp = ({ aadhaarMessage, nextForm }) => {
 
             const apiUrl = import.meta.env.VITE_AADHAAR_ENROL;
 
-            const response = await axios.post(apiUrl, requestBody, {
+            const response = await axiosInstance.post(apiUrl, requestBody, {
                 headers: {
                     'Content-Type': 'application/json'
                 }

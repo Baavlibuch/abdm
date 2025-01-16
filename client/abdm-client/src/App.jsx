@@ -1,8 +1,8 @@
-import { ApiContextProvider } from "./context/ApiContext";
+import { ApiContextProvider } from "./M1/context/ApiContext";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from "./pages/Home";
-import AadhaarOtp from "./components/AadhaarOtp";
-import DashbardHome from "./pages/Dashboard/DashbardHome";
+import Home from "./M1/pages/Home";
+// import AadhaarOtp from "./M1/components/AadhaarOtp";
+import DashbardHome from "./M1/pages/Dashboard/DashbardHome";
 
 function App() {
 
