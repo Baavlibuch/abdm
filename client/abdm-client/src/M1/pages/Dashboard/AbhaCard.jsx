@@ -8,8 +8,8 @@ const AbhaCard = () => {
 
     const DownloadAbhaCard = async () => {
         try {
-            // const apiUrl = import.meta.env.VITE_ABHACARD_API;
-            const response = await axiosInstance.get('/abha-card', {
+            const apiUrl = import.meta.env.VITE_ABHACARD_API;
+            const response = await axiosInstance.get(apiUrl, {
                 responseType: 'blob'
             });
 
