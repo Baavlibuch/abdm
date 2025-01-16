@@ -1,0 +1,63 @@
+steps:
+  # Build the backend
+  - name: 'gcr.io/cloud-builders/docker'
+    # env: 
+    #   ABDM_SBX_CLIENT_ID: ${{ variables.ABDM_SBX_CLIENT_ID}}
+    #   ABDM_SBX_CLIENT_SECRET: ${{ variables.ABDM_SBX_CLIENT_SECRET }}
+    args: [
+      'build',
+      '-t', 'gcr.io/$PROJECT_ID/serverside',
+      '-f', 'Dockerfile',
+      '.'
+    ]
+    dir: 'service/abdm'
+    env:
+      - 'ABDM_SBX_CLIENT_ID=$_ABDM_SBX_CLIENT_ID'
+      - 'ABDM_SBX_CLIENT_SECRET=$_ABDM_SBX_CLIENT_SECRET'
+
+
+  # Build the frontend
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t', 'gcr.io/$PROJECT_ID/clientside',
+      '-f', 'Dockerfile',
+      '.'
+    ]
+    dir: 'client/M1'
+
+  # Push images to GCR
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/serverside']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/clientside']
+
+  # Deploy the backend
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: [
+      'run', 'deploy', 'serverside-abdm', 
+      '--image', 'gcr.io/$PROJECT_ID/serverside', 
+      '--platform', 'managed', 
+      '--region', 'asia-south1', 
+      '--allow-unauthenticated',
+      '--set-env-vars', 'ABDM_SBX_CLIENT_ID=$_ABDM_SBX_CLIENT_ID,ABDM_SBX_CLIENT_SECRET=$_ABDM_SBX_CLIENT_SECRET',
+      '--timeout', '600s'
+    ]
+
+  # Deploy the frontend
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: [
+      'run', 'deploy', 'clientside-abdm', 
+      '--image', 'gcr.io/$PROJECT_ID/clientside', 
+      '--platform', 'managed', 
+      '--region', 'asia-south1', 
+      '--allow-unauthenticated',
+      '--timeout', '600s'
+    ]
+
+substitutions:
+  _ABDM_SBX_CLIENT_ID: ''
+  _ABDM_SBX_CLIENT_SECRET: ''
+
+options:
+  logging: CLOUD_LOGGING_ONLY
