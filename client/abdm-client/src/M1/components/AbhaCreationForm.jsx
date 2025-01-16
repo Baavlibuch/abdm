@@ -18,9 +18,9 @@ const AbhaCreationForm = () => {
         const EnrolSuggestApi = async () => {
             setLoading(true);
             try {
-                const apiUrl = import.meta.env.VITE_ENROLSUGGEST_API;
+                // const apiUrl = import.meta.env.VITE_ENROLSUGGEST_API;
 
-                const response = await axiosInstance.get(apiUrl, {
+                const response = await axiosInstance.get('/abha/enrol/suggestion', {
                     headers: {
                         'Content-Type': 'application/json'
                     }
@@ -48,9 +48,9 @@ const AbhaCreationForm = () => {
                 abhaAddress: selectedUsername
             };
 
-            const apiUrl = import.meta.env.VITE_CREATEADDRESS_API;
+            // const apiUrl = import.meta.env.VITE_CREATEADDRESS_API;
 
-            await axiosInstance.post(apiUrl, requestBody, {
+            await axiosInstance.post('/abha-address', requestBody, {
                 headers: {
                     'Content-Type': 'application/json'
                 }

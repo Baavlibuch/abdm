@@ -15,9 +15,9 @@ const VerifyEmail = () => {
         emailId: encryptText(email)
       };
 
-      const apiUrl = import.meta.env.VITE_VERIFYEMAIL_API;
+      // const apiUrl = import.meta.env.VITE_VERIFYEMAIL_API;
 
-      const response = await axiosInstance.post(apiUrl, requestBody, {
+      const response = await axiosInstance.post('/email/verify', requestBody, {
         headers: {
           'Content-Type': 'application/json'
         }

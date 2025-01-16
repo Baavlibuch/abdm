@@ -52,9 +52,9 @@ const AadhaarForm = ({ nextForm, setAadhaarMessage }) => {
                 encodedAadhaar: encryptText(aadhaar)
             };
 
-            const apiUrl = import.meta.env.VITE_AADHAAR_API;
+            // const apiUrl = import.meta.env.VITE_AADHAAR_API;
 
-            const response = await axiosInstance.post(apiUrl, requestBody, {
+            const response = await axiosInstance.post('/aadhaarV3', requestBody, {
                 headers: {
                     'Content-Type': 'application/json'
                 }

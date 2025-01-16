@@ -8,8 +8,8 @@ const AbhaCard = () => {
 
     const DownloadAbhaCard = async () => {
         try {
-            const apiUrl = import.meta.env.VITE_ABHACARD_API;
-            const response = await axiosInstance.get(apiUrl, {
+            // const apiUrl = import.meta.env.VITE_ABHACARD_API;
+            const response = await axiosInstance.get('/abha-card', {
                 responseType: 'blob'
             });
 
@@ -33,9 +33,9 @@ const AbhaCard = () => {
         const AbhaProfileApi = async () => {
             setLoading(true);
             try {
-                const apiUrl = import.meta.env.VITE_PROFILE_API;
+                // const apiUrl = import.meta.env.VITE_PROFILE_API;
 
-                const response = await axiosInstance.get(apiUrl, {
+                const response = await axiosInstance.get('/abha/profile', {
                     headers: {
                         'Content-Type': 'application/json'
                     }

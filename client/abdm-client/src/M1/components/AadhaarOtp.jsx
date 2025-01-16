@@ -58,9 +58,9 @@ const AadhaarOtp = ({ aadhaarMessage, nextForm }) => {
                 mobileNumber: phoneNumber
             };
 
-            const apiUrl = import.meta.env.VITE_AADHAAR_ENROL;
+            // const apiUrl = import.meta.env.VITE_AADHAAR_ENROL;
 
-            const response = await axiosInstance.post(apiUrl, requestBody, {
+            const response = await axiosInstance.post('/enrolAadhaarV3', requestBody, {
                 headers: {
                     'Content-Type': 'application/json'
                 }

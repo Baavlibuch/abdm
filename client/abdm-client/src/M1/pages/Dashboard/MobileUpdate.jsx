@@ -60,9 +60,9 @@ const MobileUpdate = () => {
         encodedMobileNumber: encryptText(phoneNumber)
       }
 
-      const apiUrl = import.meta.env.VITE_UPDATEMOBILE_API;
+      // const apiUrl = import.meta.env.VITE_UPDATEMOBILE_API;
 
-      const response = await axiosInstance.post(apiUrl, requestBody, {
+      const response = await axiosInstance.post('/mobile/update', requestBody, {
         headers: {
           'Content-Type': 'application/json'
         }
@@ -91,9 +91,9 @@ const MobileUpdate = () => {
         encodedOtp: encryptText(mergedOtp)
       };
 
-      const apiUrl = import.meta.env.VITE_VERIFYMOBILE_API;
+      // const apiUrl = import.meta.env.VITE_VERIFYMOBILE_API;
 
-      const response = await axiosInstance.post(apiUrl, requestBody, {
+      const response = await axiosInstance.post('/mobile/verify', requestBody, {
         headers: {
           'Content-Type': 'application/json'
         }
