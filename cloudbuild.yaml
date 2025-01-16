@@ -24,7 +24,7 @@ steps:
       '-f', 'Dockerfile',
       '.'
     ]
-    dir: 'client/M1'
+    dir: 'client/abdm-client'
 
   # Push images to GCR
   - name: 'gcr.io/cloud-builders/docker'
