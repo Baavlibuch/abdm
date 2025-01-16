@@ -5,8 +5,8 @@ const { v4: uuidv4 } = require('uuid');
 async function authTokenApi(req, res){
 	try{
 		const baseUrl = readfile('M2_Sandbox_BaseURL');
-		const clientSecret = readfile('clientSecret');
-		const clientId = readfile('clientId');
+		// const clientSecret = readfile('clientSecret');
+		// const clientId = readfile('clientId');
 		
 		const currentTime = new Date();
 		const formattedTimestamp = currentTime.toISOString();
@@ -21,9 +21,8 @@ async function authTokenApi(req, res){
 		};
 
 		const requestBody = {
-			'clientId': process.env.ABDM_SBX_CLIENT_ID || 'SBX_002928',
-			//'clientSecret': '0b19fba7-1232-4a1f-a3dc-981167db1749',
-			'clientSecret': process.env.ABDM_SBX_CLIENT_SECRET || clientSecret,
+			'clientId': process.env.ABDM_SBX_CLIENT_ID, // 'SBX_002928'
+			'clientSecret': process.env.ABDM_SBX_CLIENT_SECRET,
 			'grantType': 'client_credentials',
 		};
 
