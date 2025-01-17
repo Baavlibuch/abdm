@@ -5,12 +5,6 @@ on:
     branches:
       - main
 
-env:
-  PROJECT_ID: alert-nimbus-354910
-  SERVICE_ACCOUNT_ID: ${{ secrets.APP_ENGINE_JSON }}
-  ABDM_SBX_CLIENT_ID: ${{ secrets.ABDM_SBX_CLIENT_ID }}
-  ABDM_SBX_CLIENT_SECRET: ${{ secrets.ABDM_SBX_CLIENT_SECRET }}
-
 jobs: 
   build-deploy:
     runs-on: ubuntu-latest
@@ -28,13 +22,13 @@ jobs:
     - id: 'auth'
       uses: google-github-actions/auth@v1
       with:
-        credentials_json: $SERVICE_ACCOUNT_ID
+        credentials_json: ${{ secrets.APP_ENGINE_JSON }}
 
     # Set up Google Cloud SDK
     - name: Set up Cloud SDK
       uses: google-github-actions/setup-gcloud@v1
       with: 
-        project_id: $PROJECT_ID
+        project_id: alert-nimbus-354910
         # service_account_key: ${{ secrets.APP_ENGINE_JSON }}
         export_default_credentials: true
     
@@ -46,4 +40,4 @@ jobs:
     - name: Trigger Cloud Build
       run: |
           gcloud builds submit . \
-            --substitutions=_ABDM_SBX_CLIENT_ID="$ABDM_SBX_CLIENT_ID",_ABDM_SBX_CLIENT_SECRET="$ABDM_SBX_CLIENT_SECRET"
+            --substitutions=_ABDM_SBX_CLIENT_ID=${{ secrets.ABDM_SBX_CLIENT_ID }},_ABDM_SBX_CLIENT_SECRET=${{ secrets.ABDM_SBX_CLIENT_SECRET }}
