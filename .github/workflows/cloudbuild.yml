@@ -16,7 +16,7 @@ jobs:
 
     # permissions
     permissions:
-      contents: 'read'
+      contents: 'read' 
       id-token: 'write'
 
     steps:
@@ -45,4 +45,4 @@ jobs:
     - name: Trigger Cloud Build
       run: |
           gcloud builds submit . \
-            --substitutions=_ABDM_SBX_CLIENT_ID="$ABDM_SBX_CLIENT_ID,_ABDM_SBX_CLIENT_SECRET=$ABDM_SBX_CLIENT_SECRET
+            --substitutions=_ABDM_SBX_CLIENT_ID=$ABDM_SBX_CLIENT_ID,_ABDM_SBX_CLIENT_SECRET=$ABDM_SBX_CLIENT_SECRET
