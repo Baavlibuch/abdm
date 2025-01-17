@@ -19,8 +19,8 @@ jobs:
       uses: google-github-actions/setup-gcloud@v1
       with: 
         project_id: "alert-nimbus-354910"
-        service_account_key: ${{ secrets.APP-ENGINE-JSON }}
-        export_default_credentials: true
+        # service_account_key: ${{ secrets.APP-ENGINE-JSON }}
+        # export_default_credentials: true
     
     # Trigger Cloud Build
     - name: Trigger Cloud Build
