@@ -8,7 +8,6 @@ on:
 jobs: 
   build-deploy:
     runs-on: ubuntu-latest
-    secrets: inherit
     env:
       PROJECT_ID: alert-nimbus-354910
       APP_ENGINE_JSON: ${{ secrets.APP_ENGINE_JSON }}
