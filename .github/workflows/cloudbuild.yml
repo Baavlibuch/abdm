@@ -14,12 +14,17 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v3
 
+    - id: 'auth'
+      uses: google-github-actions/auth@v1
+      with:
+        credentials_json: ${{ secrets.APP_ENGINE_JSON }}
+
     # Set up Google Cloud SDK
     - name: Set up Cloud SDK
       uses: google-github-actions/setup-gcloud@v1
       with: 
-        project_id: "alert-nimbus-354910"
-        # service_account_key: ${{ secrets.APP-ENGINE-JSON }}
+        project_id: "alert-nimbus-354910@appspot.gserviceaccount.com"
+        # service_account_key: ${{ secrets.APP_ENGINE_JSON }}
         # export_default_credentials: true
     
     # Trigger Cloud Build
