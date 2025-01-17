@@ -1,4 +1,4 @@
-# Usinf official Node.js v16 image
+# Using official Node.js v16 image
 FROM node:16
 
 # Create app directory
@@ -7,9 +7,13 @@ WORKDIR /app
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Add build env for credentials
-ENV ABDM_SBX_CLIENT_ID=""
-ENV ABDM_SBX_CLIENT_SECRET=""
+# Add build arguments for credentials
+ARG ABDM_SBX_CLIENT_ID
+ARG ABDM_SBX_CLIENT_SECRET
+
+# Set environment variables
+ENV ABDM_SBX_CLIENT_ID=$ABDM_SBX_CLIENT_ID
+ENV ABDM_SBX_CLIENT_SECRET=$ABDM_SBX_CLIENT_SECRET
 
 # Install dependencies
 RUN npm install

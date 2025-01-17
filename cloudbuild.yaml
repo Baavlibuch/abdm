@@ -1,9 +1,6 @@
 steps:
   # Build the backend
   - name: 'gcr.io/cloud-builders/docker'
-    # env: 
-    #   ABDM_SBX_CLIENT_ID: ${{ variables.ABDM_SBX_CLIENT_ID}}
-    #   ABDM_SBX_CLIENT_SECRET: ${{ variables.ABDM_SBX_CLIENT_SECRET }}
     args: [
       'build',
       '-t', 'gcr.io/$PROJECT_ID/serverside',
@@ -11,10 +8,6 @@ steps:
       '.'
     ]
     dir: 'service/abdm'
-    env:
-      - 'ABDM_SBX_CLIENT_ID=$_ABDM_SBX_CLIENT_ID'
-      - 'ABDM_SBX_CLIENT_SECRET=$_ABDM_SBX_CLIENT_SECRET'
-
 
   # Build the frontend
   - name: 'gcr.io/cloud-builders/docker'

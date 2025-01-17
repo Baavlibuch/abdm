@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  PROJECT_ID: alert-nimbus-354910@appspot.gserviceaccount.com
+  PROJECT_ID: alert-nimbus-354910
   SERVICE_ACCOUNT_ID: ${{ secrets.APP_ENGINE_JSON }}
   ABDM_SBX_CLIENT_ID: ${{ secrets.ABDM_SBX_CLIENT_ID }}
   ABDM_SBX_CLIENT_SECRET: ${{ secrets.ABDM_SBX_CLIENT_SECRET }}
