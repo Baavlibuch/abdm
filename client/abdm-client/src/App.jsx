@@ -11,8 +11,8 @@ function App() {
       <ApiContextProvider>
         <Routes>
           <Route path="*" element={'404 Not Found'} />
-          <Route exact path="/abdm" element={<Home />} />
-          <Route path="/abdm/dashboard" element={<DashbardHome />} />
+          <Route exact path="/" element={<Home />} />
+          <Route path="/dashboard" element={<DashbardHome />} />
         </Routes>
       </ApiContextProvider>
     </Router>
