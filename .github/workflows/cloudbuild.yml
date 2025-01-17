@@ -30,8 +30,8 @@ jobs:
       run: |
         echo "PROJECT_ID: $PROJECT_ID"
         echo "APP_ENGINE_JSON: ${APP_ENGINE_JSON:0:10}..."  # Print only the first 10 characters for debugging
-        echo "ABDM_SBX_CLIENT_ID: $ABDM_SBX_CLIENT_ID"
-        echo "ABDM_SBX_CLIENT_SECRET: ***"
+        echo "ABDM_SBX_CLIENT_ID: ${ABDM_SBX_CLIENT_ID:0:10}"
+        echo "ABDM_SBX_CLIENT_SECRET: ${ABDM_SBX_CLIENT_SECRET:0:10}"
 
     - id: 'auth'
       uses: google-github-actions/auth@v1
