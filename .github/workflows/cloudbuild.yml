@@ -15,6 +15,14 @@ jobs:
   build-deploy:
     runs-on: ubuntu-latest
 
+    # Verify environment variables
+    - name: Print Environment Variables
+      run: |
+        echo "PROJECT_ID: $PROJECT_ID"
+        echo "APP_ENGINE_JSON: ${APP_ENGINE_JSON:0:10}..."  # Print only the first 10 characters for debugging
+        echo "ABDM_SBX_CLIENT_ID: $ABDM_SBX_CLIENT_ID"
+        echo "ABDM_SBX_CLIENT_SECRET: ***"
+
     # permissions
     permissions:
       contents: 'read' 
@@ -41,14 +49,6 @@ jobs:
     # Verify authentication
     - name: Verify Authentication
       run: gcloud auth list
-
-    # Verify environment variables
-    - name: Print Environment Variables
-      run: |
-        echo "PROJECT_ID: $PROJECT_ID"
-        echo "APP_ENGINE_JSON: ${APP_ENGINE_JSON:0:10}..."  # Print only the first 10 characters for debugging
-        echo "ABDM_SBX_CLIENT_ID: $ABDM_SBX_CLIENT_ID"
-        echo "ABDM_SBX_CLIENT_SECRET: ***"
     
     # Trigger Cloud Build
     - name: Trigger Cloud Build
