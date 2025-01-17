@@ -28,13 +28,13 @@ jobs:
     - id: 'auth'
       uses: google-github-actions/auth@v1
       with:
-        credentials_json: ${{ env.APP_ENGINE_JSON }}
+        credentials_json: $APP_ENGINE_JSON
 
     # Set up Google Cloud SDK
     - name: Set up Cloud SDK
       uses: google-github-actions/setup-gcloud@v1
       with: 
-        project_id: ${{ env.PROJECT_ID }}
+        project_id: $PROJECT_ID
         # service_account_key: ${{ secrets.APP_ENGINE_JSON }}
         export_default_credentials: true
     
