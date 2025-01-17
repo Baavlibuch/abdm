@@ -23,9 +23,13 @@ jobs:
     - name: Set up Cloud SDK
       uses: google-github-actions/setup-gcloud@v1
       with: 
-        project_id: "alert-nimbus-354910@appspot.gserviceaccount.com"
+        project_id: "alert-nimbus-354910"
         # service_account_key: ${{ secrets.APP_ENGINE_JSON }}
-        # export_default_credentials: true
+        export_default_credentials: true
+    
+    # Verify authentication
+    - name: Verify Authentication
+      run: gcloud auth list
     
     # Trigger Cloud Build
     - name: Trigger Cloud Build
