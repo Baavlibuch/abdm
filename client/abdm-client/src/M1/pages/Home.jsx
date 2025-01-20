@@ -26,7 +26,7 @@ const Home = () => {
         }
     };
 
-    console.log('client secret: ', process.env.ABDM_SBX_CLIENT_ID);
+    console.log('client secret: ', import.meta.env.ABDM_SBX_CLIENT_ID);
 
     return (
         <div>
