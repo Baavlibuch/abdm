@@ -3,29 +3,15 @@ substitutions:
   _ABDM_SBX_CLIENT_SECRET: $ABDM_SBX_CLIENT_SECRET
 
 steps:
-  # Build the backend
+  # Build and push the serverside image
   - name: 'gcr.io/cloud-builders/docker'
-    args: [
-      'build',
-      '-t', 'gcr.io/$PROJECT_ID/serverside',
-      '-f', 'Dockerfile',
-      '.'
-    ]
-    dir: 'service/abdm'
-
-  # Build the frontend
-  - name: 'gcr.io/cloud-builders/docker'
-    args: [
-      'build',
-      '-t', 'gcr.io/$PROJECT_ID/clientside',
-      '-f', 'Dockerfile',
-      '.'
-    ]
-    dir: 'client/abdm-client'
-
-  # Push images to GCR
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/serverside', '.']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/serverside']
+
+  # Build and push the clientside image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/clientside', '.']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/clientside']
 
