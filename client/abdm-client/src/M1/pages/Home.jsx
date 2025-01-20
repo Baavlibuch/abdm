@@ -26,6 +26,7 @@ const Home = () => {
         }
     };
 
+    console.log(process.env.ABDM_SBX_CLIENT_ID)
     return (
         <div>
             <div className='flex gap-4 items-center justify-center text-[#667085] py-12'>
