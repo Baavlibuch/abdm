@@ -7,8 +7,8 @@ on:
 
 env:
   PROJECT_ID: alert-nimbus-354910
-  APP_ENGINE_JSON: ${{ secrets.APP_ENGINE_JSON }}
-  ABDM_SBX_CLIENT_ID: ${{ secrets.ABDM_SBX_CLIENT_ID }}
+  APP_ENGINE_JSON: ${{ env.APP_ENGINE_JSON }}
+  ABDM_SBX_CLIENT_ID: ${{ env.ABDM_SBX_CLIENT_ID }}
   ABDM_SBX_CLIENT_SECRET: ${{ secrets.ABDM_SBX_CLIENT_SECRET }}
 
 jobs: 
@@ -29,7 +29,7 @@ jobs:
     - name: Print Environment Variables
       run: |
         echo "PROJECT_ID: $PROJECT_ID"
-        echo "APP_ENGINE_JSON: ${APP_ENGINE_JSON:0:10}..."  # Print only the first 10 characters for debugging
+        echo "APP_ENGINE_JSON: ${APP_ENGINE_JSON:0:10}..."
         echo "ABDM_SBX_CLIENT_ID: ${ABDM_SBX_CLIENT_ID:0:10}"
         echo "ABDM_SBX_CLIENT_SECRET: ${ABDM_SBX_CLIENT_SECRET:0:10}"
 
