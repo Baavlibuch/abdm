@@ -33,7 +33,7 @@ steps:
       '--platform', 'managed', 
       '--region', 'asia-south1', 
       '--allow-unauthenticated',
-      '--set-env-vars', 'ABDM_SBX_CLIENT_ID=$_ABDM_SBX_CLIENT_ID,ABDM_SBX_CLIENT_SECRET=$_ABDM_SBX_CLIENT_SECRET',
+      '--set-env-vars', 'ABDM_SBX_CLIENT_ID=$ABDM_SBX_CLIENT_ID,ABDM_SBX_CLIENT_SECRET=$ABDM_SBX_CLIENT_SECRET',
       '--timeout', '600s'
     ]
 

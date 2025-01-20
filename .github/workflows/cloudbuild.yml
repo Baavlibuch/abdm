@@ -56,3 +56,5 @@ jobs:
       run: |
           gcloud builds submit . \
             --substitutions=_ABDM_SBX_CLIENT_ID=$ABDM_SBX_CLIENT_ID,_ABDM_SBX_CLIENT_SECRET=$ABDM_SBX_CLIENT_SECRET
+
+            
