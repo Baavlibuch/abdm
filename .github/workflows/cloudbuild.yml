@@ -8,7 +8,7 @@ on:
 env:
   PROJECT_ID: alert-nimbus-354910
   APP_ENGINE_JSON: ${{ env.APP_ENGINE_JSON }}
-  ABDM_SBX_CLIENT_ID: ${{ env.ABDM_SBX_CLIENT_ID }}
+  ABDM_SBX_CLIENT_ID: ${{ env.ABDM_SBX_CLIENT_ID }} 
   ABDM_SBX_CLIENT_SECRET: ${{ secrets.ABDM_SBX_CLIENT_SECRET }}
 
 jobs: 
