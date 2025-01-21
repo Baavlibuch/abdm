@@ -7,7 +7,7 @@ on:
 
 env:
   PROJECT_ID: alert-nimbus-354910
-  APP_ENGINE_JSON: ${{ secrets.APP_ENGINE_JSON }}
+  APP_ENGINE_JSON: ${{ vars.APP_ENGINE_JSON }}
   ABDM_SBX_CLIENT_ID: ${{ vars.ABDM_SBX_CLIENT_ID }} 
   ABDM_SBX_CLIENT_SECRET: ${{ secrets.ABDM_SBX_CLIENT_SECRET }}
 
@@ -23,7 +23,7 @@ jobs:
     steps:
     # Checkout the repository
     - name: Checkout Code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     # Verify environment variables
     - name: Print Environment Variables
@@ -34,22 +34,23 @@ jobs:
         echo "ABDM_SBX_CLIENT_SECRET: ${ABDM_SBX_CLIENT_SECRET:0:10}"
 
     - id: 'auth'
-      uses: google-github-actions/auth@v1
+      uses: google-github-actions/auth@v2
       with:
+        project_id: $PROJECT_ID
         credentials_json: $APP_ENGINE_JSON
 
     # Set up Google Cloud SDK
-    - name: Set up Cloud SDK
-      uses: google-github-actions/setup-gcloud@v1
-      with: 
-        project_id: $PROJECT_ID
-        # service_account_key: $APP_ENGINE_JSON
-        # service_account_key: ${{ secrets.APP_ENGINE_JSON }}
-        export_default_credentials: true
+    # - name: Set up Cloud SDK
+    #   uses: google-github-actions/setup-gcloud@v1
+    #   with: 
+    #     project_id: $PROJECT_ID
+    #     # service_account_key: $APP_ENGINE_JSON
+    #     # service_account_key: ${{ secrets.APP_ENGINE_JSON }}
+    #     export_default_credentials: true
     
     # Verify authentication
-    - name: Verify Authentication
-      run: gcloud auth list
+    # - name: Verify Authentication
+    #   run: gcloud auth list
     
      # Trigger Cloud Build
     - name: Trigger Cloud Build

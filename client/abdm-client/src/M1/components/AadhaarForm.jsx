@@ -16,6 +16,8 @@ const AadhaarForm = ({ nextForm, setAadhaarMessage }) => {
     // const { accessToken } = ApiAccess();
     // console.log(accessToken)
 
+    console.log('client secret: ', process.env.ABDM_SBX_CLIENT_SECRET)
+
     const handleInputChange = (event) => {
 
         const value = event.target.value;
