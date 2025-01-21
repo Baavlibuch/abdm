@@ -2,6 +2,8 @@ const axios = require('axios');
 const { readfile, Write2file } = require('../../read_or_write2KeyValues.js');
 const { v4: uuidv4 } = require('uuid');
 
+require('dotenv').config();
+
 async function authTokenApi(req, res){
 	try{
 		const baseUrl = readfile('M2_Sandbox_BaseURL');

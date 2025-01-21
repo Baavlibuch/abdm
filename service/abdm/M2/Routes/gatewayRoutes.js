@@ -8,7 +8,7 @@ const updateBridge = require('../Gateway/updateBridge.js');
 const registerHRP = require('../Gateway/registerHRP.js');
 const findBridgeByServiceId = require('../Gateway/findBridgeByServiceId.js');
 
-router.get('/m2/authToken', async(req, res) => {
+router.get('/abha/api/m2/authToken', async(req, res) => {
 	try{
 		const data = await authTokenApi(req, res);
 	} catch (error){
