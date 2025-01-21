@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  PROJECT_ID: alert-nimbus-354910
+  PROJECT_ID: alert-nimbus-354910@appspot.gserviceaccount.com
   APP_ENGINE_JSON: ${{ vars.APP_ENGINE_JSON }}
   ABDM_SBX_CLIENT_ID: ${{ vars.ABDM_SBX_CLIENT_ID }} 
   ABDM_SBX_CLIENT_SECRET: ${{ secrets.ABDM_SBX_CLIENT_SECRET }}
@@ -37,7 +37,6 @@ jobs:
       uses: google-github-actions/auth@v2
       with:
         credentials_json: $APP_ENGINE_JSON
-        service_account: 'alert-nimbus-354910@appspot.gserviceaccount.com'
 
     # Set up Google Cloud SDK
     - name: Set up Cloud SDK
