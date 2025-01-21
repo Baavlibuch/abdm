@@ -37,6 +37,7 @@ jobs:
       uses: google-github-actions/auth@v2
       with:
         credentials_json: $APP_ENGINE_JSON
+        service_account: 'alert-nimbus-354910@appspot.gserviceaccount.com'
 
     # Set up Google Cloud SDK
     - name: Set up Cloud SDK
