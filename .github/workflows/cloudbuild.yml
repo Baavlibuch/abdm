@@ -29,9 +29,9 @@ jobs:
     - name: Print Environment Variables
       run: |
         echo "PROJECT_ID: $PROJECT_ID"
-        echo "APP_ENGINE_JSON: ${APP_ENGINE_JSON:0:10}"
+        echo "APP_ENGINE_JSON: ${APP_ENGINE_JSON:0:20}"
         echo "ABDM_SBX_CLIENT_ID: ${ABDM_SBX_CLIENT_ID:0:10}"
-        echo "ABDM_SBX_CLIENT_SECRET: ${ABDM_SBX_CLIENT_SECRET:0:36}"
+        echo "ABDM_SBX_CLIENT_SECRET: ${ABDM_SBX_CLIENT_SECRET:0:30}"
 
     - id: 'auth'
       uses: google-github-actions/auth@v2
