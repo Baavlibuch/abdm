@@ -31,26 +31,23 @@ jobs:
         echo "PROJECT_ID: $PROJECT_ID"
         echo "APP_ENGINE_JSON: ${APP_ENGINE_JSON:0:10}"
         echo "ABDM_SBX_CLIENT_ID: ${ABDM_SBX_CLIENT_ID:0:10}"
-        echo "ABDM_SBX_CLIENT_SECRET: ${ABDM_SBX_CLIENT_SECRET:0:10}"
+        echo "ABDM_SBX_CLIENT_SECRET: ${ABDM_SBX_CLIENT_SECRET:0:30}"
 
     - id: 'auth'
       uses: google-github-actions/auth@v2
       with:
-        project_id: $PROJECT_ID
         credentials_json: $APP_ENGINE_JSON
 
     # Set up Google Cloud SDK
-    # - name: Set up Cloud SDK
-    #   uses: google-github-actions/setup-gcloud@v1
-    #   with: 
-    #     project_id: $PROJECT_ID
-    #     # service_account_key: $APP_ENGINE_JSON
-    #     # service_account_key: ${{ secrets.APP_ENGINE_JSON }}
-    #     export_default_credentials: true
+    - name: Set up Cloud SDK
+      uses: google-github-actions/setup-gcloud@v1
+      with: 
+        project_id: $PROJECT_ID
+        export_default_credentials: true
     
     # Verify authentication
-    # - name: Verify Authentication
-    #   run: gcloud auth list
+    - name: Verify Authentication
+      run: gcloud auth list
     
      # Trigger Cloud Build
     - name: Trigger Cloud Build
