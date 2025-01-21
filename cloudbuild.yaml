@@ -5,8 +5,8 @@ steps:
     args:
       - '-c'
       - |
-        ABDM_SBX_CLIENT_ID=$(gcloud secrets versions access latest --secret="ABDM_SBX_CLIENT_ID")
-        ABDM_SBX_CLIENT_SECRET=$(gcloud secrets versions access latest --secret="ABDM_SBX_CLIENT_SECRET")
+        _ABDM_SBX_CLIENT_ID=$(gcloud secrets versions access latest --secret="ABDM_SBX_CLIENT_ID")
+        _ABDM_SBX_CLIENT_SECRET=$(gcloud secrets versions access latest --secret="ABDM_SBX_CLIENT_SECRET")
         echo "ABDM_SBX_CLIENT_ID=$ABDM_SBX_CLIENT_ID" >> /workspace/env_vars
         echo "ABDM_SBX_CLIENT_SECRET=$ABDM_SBX_CLIENT_SECRET" >> /workspace/env_vars
 
@@ -17,8 +17,8 @@ steps:
       - '-c'
       - |
         source /workspace/env_vars
-        echo "ABDM_SBX_CLIENT_ID: ${ABDM_SBX_CLIENT_ID:0:10}..."
-        echo "ABDM_SBX_CLIENT_SECRET: ${ABDM_SBX_CLIENT_SECRET:0:3}..."
+        echo "_ABDM_SBX_CLIENT_ID: ${ABDM_SBX_CLIENT_ID:0:10}..."
+        echo "_ABDM_SBX_CLIENT_SECRET: ${ABDM_SBX_CLIENT_SECRET:0:3}..."
 
   # Build and push the clientside image
   - name: 'gcr.io/cloud-builders/docker'
