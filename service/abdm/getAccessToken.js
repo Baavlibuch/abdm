@@ -6,10 +6,10 @@ async function getAccessToken() {
   // const axios = require('axios');
   const url = 'https://dev.abdm.gov.in/gateway/v0.5/sessions';
 
-  const clientSecret = readfile('clientSecret');
+  // const clientSecret = readfile('clientSecret');
   const requestData = {
-    'clientId': process.env.ABDM_SBX_CLIENT_ID, // 'SBX_002928'
-    'clientSecret':process.env.ABDM_SBX_CLIENT_SECRET //'5b24ab9e-2194-4f5f-aca3-fdb0a4872312'
+    'clientId': 'SBX_002928', // 'SBX_002928'
+    'clientSecret':'5b24ab9e-2194-4f5f-aca3-fdb0a4872312' //'5b24ab9e-2194-4f5f-aca3-fdb0a4872312'
   };
 
   const headers = {

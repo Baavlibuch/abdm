@@ -175,7 +175,7 @@ async function App() {
 
     app.use('/', aadhaarRoute);
 
-    app.use('/abdm/api', register_callback);
+    app.use('/', register_callback);
 
     app.use('/', m2Callbacks);
     app.use('/', m2GatewayRoutes);

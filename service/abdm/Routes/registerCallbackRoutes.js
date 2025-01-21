@@ -46,13 +46,14 @@ router.get('/abha-card', async(req, res) => {
 	}
 })
 
-router.get('/abha/getToken', async(req, res) => {
-	try{
-		await getAccessToken(req, res);
-	} catch (error) {
-		res.status(500).json({ error: error.message });
-	}
-});
+router.get('/abha/getToken', getAccessToken);
+// router.get('/abha/getToken', async(req, res) => {
+// 	try{
+// 		await getAccessToken(req, res);
+// 	} catch (error) {
+// 		res.status(500).json({ error: error.message });
+// 	}
+// });
 
 router.post('/abha-address', abhaAddress);
 

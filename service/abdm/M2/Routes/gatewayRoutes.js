@@ -8,13 +8,14 @@ const updateBridge = require('../Gateway/updateBridge.js');
 const registerHRP = require('../Gateway/registerHRP.js');
 const findBridgeByServiceId = require('../Gateway/findBridgeByServiceId.js');
 
-router.get('/abha/api/m2/authToken', async(req, res) => {
-	try{
-		const data = await authTokenApi(req, res);
-	} catch (error){
-		res.status(500).json({ error: error.message });
-	}
-});
+router.get('/abha/api/m2/authToken', authTokenApi);
+// router.get('/abha/api/m2/authToken', async(req, res) => {
+// 	try{
+// 		const data = await authTokenApi(req, res);
+// 	} catch (error){
+// 		res.status(500).json({ error: error.message });
+// 	}
+// });
 
 router.get('/m2/keycloak/certs', async(req, res) => {
 	try{
