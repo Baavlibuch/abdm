@@ -1,17 +1,13 @@
-substitutions:
-  _ABDM_SBX_CLIENT_ID: $ABDM_SBX_CLIENT_ID
-  _ABDM_SBX_CLIENT_SECRET: $ABDM_SBX_CLIENT_SECRET
-
 steps:
   # Build and push the serverside image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/serverside', '.']
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/serverside', './service/abdm']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/serverside']
 
   # Build and push the clientside image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/clientside', '.']
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/clientside', './client/abdm-client']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/clientside']
 
@@ -37,6 +33,10 @@ steps:
       '--allow-unauthenticated',
       '--timeout', '600s'
     ]
+
+substitutions:
+  _ABDM_SBX_CLIENT_ID: 'default-placeholder'
+  _ABDM_SBX_CLIENT_SECRET: 'default-placeholder'
 
 options:
   logging: CLOUD_LOGGING_ONLY
