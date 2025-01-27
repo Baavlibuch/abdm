@@ -19,8 +19,14 @@ steps:
       '--platform', 'managed', 
       '--region', 'asia-south1', 
       '--allow-unauthenticated',
-      '--set-env-vars', 'ABDM_SBX_CLIENT_SECRET=projects/$PROJECT_ID/secrets/ABDM_SBX_CLIENT_SECRET/versions/latest,ABDM_SBX_CLIENT_ID=projects/$PROJECT_ID/secrets/ABDM_SBX_CLIENT_ID/versions/latest',
       '--timeout', '600s'
+    ]
+
+  # Deploy the backend service using cloud-run-service.yaml
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: [
+      'run', 'services', 'replace', 'cloud-run-service.yaml', 
+      '--region', 'asia-south1'
     ]
 
   # Deploy the frontend
@@ -31,13 +37,8 @@ steps:
       '--platform', 'managed', 
       '--region', 'asia-south1', 
       '--allow-unauthenticated',
-      '--set-env-vars', 'REACT_APP_ABDM_SBX_CLIENT_SECRET=projects/$PROJECT_ID/secrets/ABDM_SBX_CLIENT_SECRET/versions/latest,REACT_APP_ABDM_SBX_CLIENT_ID=projects/$PROJECT_ID/secrets/ABDM_SBX_CLIENT_ID/versions/latest',
       '--timeout', '600s'
     ]
-
-substitutions:
-  _ABDM_SBX_CLIENT_ID: 'default-placeholder'
-  _ABDM_SBX_CLIENT_SECRET: 'default-placeholder'
 
 options:
   logging: CLOUD_LOGGING_ONLY

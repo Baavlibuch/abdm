@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const axiosInstance = axios.create({
     // baseURL: process.env.REACT_APP_BASE_URL
-    baseURL: "https://abdm.easemymed.com"
+    // baseURL: "https://abdm.easemymed.com"
 
 });
 
