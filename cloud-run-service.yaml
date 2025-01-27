@@ -12,9 +12,9 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: ABDM_SBX_CLIENT_ID
-                key: latest
+                key: '1'
           - name: ABDM_SBX_CLIENT_SECRET
             valueFrom:
               secretKeyRef:
                 name: ABDM_SBX_CLIENT_SECRET
-                key: latest
+                key: '1'
