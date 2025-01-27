@@ -8,10 +8,10 @@ spec:
       containers:
         - image: gcr.io/alert-nimbus-354910/serverside
           env:
-          - name: ABDM_SBX_CLIENT_ID
+          - name: ABDM_SBX_CLIENT
             valueFrom:
               secretKeyRef:
-                name: ABDM_SBX_CLIENT_ID
+                name: ABDM_SBX_CLIENT
                 key: '1'
           - name: ABDM_SBX_CLIENT_SECRET
             valueFrom:
