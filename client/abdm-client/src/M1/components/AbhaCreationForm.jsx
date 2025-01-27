@@ -20,7 +20,7 @@ const AbhaCreationForm = () => {
             try {
                 // const apiUrl = import.meta.env.VITE_ENROLSUGGEST_API;
 
-                const response = await axiosInstance.get('/abha/enrol/suggestion', {
+                const response = await axiosInstance.get('/abdm/api/abha/enrol/suggestion', {
                     headers: {
                         'Content-Type': 'application/json'
                     }

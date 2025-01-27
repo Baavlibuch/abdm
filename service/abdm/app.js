@@ -173,7 +173,7 @@ async function App() {
       console.log(`Server listening at http://localhost:${port}....`);
     });
 
-    app.use('/', aadhaarRoute);
+    app.use('/abdm/api', aadhaarRoute);
 
     app.use('/abdm/api', register_callback);
 

@@ -9,7 +9,7 @@ const AbhaCard = () => {
     const DownloadAbhaCard = async () => {
         try {
             // const apiUrl = import.meta.env.VITE_ABHACARD_API;
-            const response = await axiosInstance.get('/abha-card', {
+            const response = await axiosInstance.get('/abdm/api/abha-card', {
                 responseType: 'blob'
             });
 
@@ -35,7 +35,7 @@ const AbhaCard = () => {
             try {
                 // const apiUrl = import.meta.env.VITE_PROFILE_API;
 
-                const response = await axiosInstance.get('/abha/profile', {
+                const response = await axiosInstance.get('/abdm/api/abha/profile', {
                     headers: {
                         'Content-Type': 'application/json'
                     }

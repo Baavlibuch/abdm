@@ -93,7 +93,7 @@ const MobileUpdate = () => {
 
       // const apiUrl = import.meta.env.VITE_VERIFYMOBILE_API;
 
-      const response = await axiosInstance.post('/mobile/verify', requestBody, {
+      const response = await axiosInstance.post('/abdm/api/mobile/verify', requestBody, {
         headers: {
           'Content-Type': 'application/json'
         }

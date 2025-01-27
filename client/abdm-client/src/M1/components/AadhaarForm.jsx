@@ -54,7 +54,7 @@ const AadhaarForm = ({ nextForm, setAadhaarMessage }) => {
 
             // const apiUrl = import.meta.env.VITE_AADHAAR_API;
 
-            const response = await axiosInstance.post('/aadhaarV3', requestBody, {
+            const response = await axiosInstance.post('/abdm/api/aadhaarV3', requestBody, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
