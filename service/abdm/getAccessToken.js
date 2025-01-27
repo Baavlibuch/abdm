@@ -8,7 +8,7 @@ async function getAccessToken() {
 
   // const clientSecret = readfile('clientSecret');
   const requestData = {
-    'clientId': process.env.ABDM_SBX_CLIENT_ID, // 'SBX_002928'
+    'clientId': process.env.ABDM_SBX_CLIENT, // 'SBX_002928'
     'clientSecret': process.env.ABDM_SBX_CLIENT_SECRET //'5b24ab9e-2194-4f5f-aca3-fdb0a4872312'
   };
 

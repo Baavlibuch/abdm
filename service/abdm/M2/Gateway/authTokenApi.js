@@ -23,7 +23,7 @@ async function authTokenApi(req, res){
 		};
 
 		const requestBody = {
-			'clientId': process.env.ABDM_SBX_CLIENT_ID, // 'SBX_002928'
+			'clientId': process.env.ABDM_SBX_CLIENT, // 'SBX_002928'
 			'clientSecret': process.env.ABDM_SBX_CLIENT_SECRET,
 			'grantType': 'client_credentials',
 		};
