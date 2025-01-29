@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const axiosInstance = axios.create({
     // baseURL: process.env.REACT_APP_BASE_URL
-    baseURL: "https://serverside-abdm-315394074642.asia-south1.run.app"
+    baseURL: "https://serverside-abdm-315394074642.asia-south1.run.app/abdm/api"
 
 });
 

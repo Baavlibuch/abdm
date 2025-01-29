@@ -14,7 +14,7 @@ export const ApiContextProvider = ({ children }) => {
     const fetchAccessToken = async () => {
         try {
             // const apiUrl = import.meta.env.VITE_ACCESSTOKEN_API;
-            const response = await axiosInstance.get('/abdm/api/abha/getToken');
+            const response = await axiosInstance.get('/abha/getToken');
             const token = response.data.accessToken;
             const expiryTime = new Date().getTime() + 20 * 60 * 1000; // 20 minutes from now
 
