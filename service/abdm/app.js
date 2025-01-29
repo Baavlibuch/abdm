@@ -71,7 +71,7 @@ const medicineRoutes = require('./HPR/Routes/medicineRoutes.js');
 const unaniRoutes = require('./HPR/Routes/unaniRoutes.js');
 const workStatusRoutes = require('./HPR/Routes/workStatusRoutes.js');
 
-console.log('client secret: ', process.env.ABDM_SBX_CLIENT_SECRET);
+console.log('client secret: ', process.env.ABDM_SBX_CLIENT_SECRET); 
 console.log('client id: ', process.env.ABDM_SBX_CLIENT);
 
 function updateHealthRepoUrl(accessToken, refreshToken, timestamp) {
